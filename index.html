@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ie</title>
+<title>Мои ссылки</title>
 <style>
-  /* Плавное появление всей страницы */
   body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: white;
     color: black;
+    position: relative;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,62 +25,80 @@
     }
   }
 
-  .banner {
-    width: 100%;
-    max-height: 300px;
-    overflow: visible;
-  }
-  .banner img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; /* Показывает всю картинку без обрезки */
-    display: block;
+  /* Фон с ASCII art */
+  .ascii-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: pre;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 12px;
+    color: rgba(0,0,0,0.05); /* очень светлый, почти прозрачный */
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
   }
 
   h1 {
-    margin-top: 30px;
-    text-align: center;
+    margin: 30px 0 20px 0;
+    z-index: 1;
   }
 
+  /* Контейнер для иконок */
   .links {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 30px 0;
-    width: 150px;
+    gap: 20px;
+    z-index: 1;
   }
 
-  /* Черные маленькие квадратные кнопки */
-  .links a {
-    text-decoration: none;
-    background-color: black;
-    color: white;
-    padding: 8px;
-    border-radius: 0;
-    font-weight: normal;
-    font-size: 14px;
-    text-align: center;
-    transition: background-color 0.3s;
+  /* Ссылки - картинки */
+  .links a img {
+    width: 40px;
+    height: 40px;
     display: block;
+    transition: transform 0.3s;
+    cursor: pointer;
   }
-  .links a:hover {
-    background-color: #333;
+
+  .links a img:hover {
+    transform: scale(1.1);
   }
 </style>
 </head>
 <body>
 
-<div class="banner">
-  <img src="https://i.pinimg.com/1200x/b4/59/64/b45964f3c7481d434db05965bc5a9944.jpg" alt="ie"> 
+<!-- ASCII art фон -->
+<div class="ascii-background">
+                  ___     
+      ___        /\  \    
+     /\  \      /::\  \   
+     \:\  \    /:/\:\  \  
+     /::\__\  /::\~\:\  \ 
+  __/:/\/__/ /:/\:\ \:\__\
+ /\/:/  /    \:\~\:\ \/__/
+ \::/__/      \:\ \:\__\  
+  \:\__\       \:\ \/__/  
+   \/__/        \:\__\    
+                 \/__/    
 </div>
 
-<h1>socials</h1>
+<h1>Мои ссылки</h1>
 
 <div class="links">
-  <a href="https://soundcloud.com/furui_ie" target="_blank">soundcloud</a>
-  <a href="https://www.tiktok.com/@aswkviperr" target="_blank">tiktok</a>
-  <a href="https://t.me/gotcrimed" target="_blank">telegram</a>
-  <a href="https://discord.com/users/fu4n" target="_blank">discord</a>
+  <a href="https://soundcloud.com/furui_ie" target="_blank" title="SoundCloud">
+    <img src="https://cdn-icons-png.flaticon.com/512/145/145812.png" alt="SoundCloud">
+  </a>
+  <a href="https://www.tiktok.com/@aswkviperr" target="_blank" title="TikTok">
+    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok">
+  </a>
+  <a href="https://t.me/gotcrimed" target="_blank" title="Telegram">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+  </a>
+  <a href="https://discord.com/users/fu4n" target="_blank" title="Discord">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
+  </a>
 </div>
 
 </body>
