@@ -1,55 +1,69 @@
-перепиши код что бы все было в белом весь сайт был в белом и была плавная анимация fade in появления, что бы кнопки были черными маленькими квадратными и фотка была видна полностю
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Мои ссылки</title>
+<title>ie</title>
 <style>
+  /* Плавное появление всей страницы */
   body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: white;
+    background-color: white;
+    color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: fadeIn 1.5s ease forwards;
+    opacity: 0;
   }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
   .banner {
     width: 100%;
     max-height: 300px;
-    overflow: hidden;
+    overflow: visible;
   }
   .banner img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: contain; /* Показывает всю картинку без обрезки */
+    display: block;
   }
+
   h1 {
     margin-top: 30px;
     text-align: center;
   }
+
   .links {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     margin: 30px 0;
-    width: 300px;
+    width: 150px;
   }
+
+  /* Черные маленькие квадратные кнопки */
   .links a {
     text-decoration: none;
-    background-color: #1DB954;
+    background-color: black;
     color: white;
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 18px;
+    padding: 8px;
+    border-radius: 0;
+    font-weight: normal;
+    font-size: 14px;
     text-align: center;
     transition: background-color 0.3s;
+    display: block;
   }
   .links a:hover {
-    background-color: #14833b;
+    background-color: #333;
   }
 </style>
 </head>
@@ -59,7 +73,7 @@
   <img src="https://i.pinimg.com/1200x/b4/59/64/b45964f3c7481d434db05965bc5a9944.jpg" alt="ie"> 
 </div>
 
-<h1>Мои ссылки</h1>
+<h1>socials</h1>
 
 <div class="links">
   <a href="https://soundcloud.com/furui_ie" target="_blank">soundcloud</a>
